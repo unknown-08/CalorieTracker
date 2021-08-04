@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".MainActivity"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbardoubts"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/background_color"
+
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Track Calorie"
+            app:titleTextColor="#ffffff" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/tool"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/clickFromCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#1dc6a4">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:src="@drawable/ic_add_a_photo_black_24dp"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pickFromGallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#4c9adb"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_collections_black_24dp"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/analytics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#af1ece">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_analytics_black_24dp"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/trackChanges"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#e1709c">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_track_changes_black_24dp"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/circular_determinative_pb"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="431dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/pb_background"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/progress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/circular_determinative_pb"
+        app:layout_constraintEnd_toEndOf="@+id/circular_determinative_pb"
+        app:layout_constraintStart_toStartOf="@+id/circular_determinative_pb"
+        app:layout_constraintTop_toTopOf="@+id/circular_determinative_pb"
+        android:textSize="40sp"
+        android:text="wait"
+        />
+
+    <TextView
+        android:id="@+id/cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:drawableLeft="@drawable/iconeating"
+        android:fontFamily="@font/unna"
+        android:gravity="center_horizontal"
+        android:text="Calories"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circular_determinative_pb" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cal">
+    <TextView
+        android:id="@+id/targ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:drawableLeft="@drawable/ic_track_changes_black1_24dp"
+        android:fontFamily="@font/unna"
+        android:gravity="center_horizontal"
+        android:text="Target"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+      />
+    <TextView
+        android:id="@+id/cla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text=" Cal"
+        android:fontFamily="@font/unna"
+
+        android:textColor="@color/white"
+        android:textSize="30sp"
+      />
+
+
+
+
+        />
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
